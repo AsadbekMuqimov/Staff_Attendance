@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Staff Shift</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete this staff shift?</h1>
+    
+    <p>{{ staff_shift.staff }} - {{ staff_shift.shift }} - {{ staff_shift.start_time }}</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+    </form>
+    
+    <a href="{% url 'staff_shift_list' %}">Cancel</a>
+</body>
+</html>

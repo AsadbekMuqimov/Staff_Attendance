@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position List</title>
+</head>
+<body>
+    <h1>Position List</h1>
+
+    <a href="{% url 'position_create' %}">Create Position</a>
+
+    
+    <ul>
+        {% for position in positions %}
+            <li>{{ position.name }} 
+                - <a href="{% url 'position_update' position.pk %}">Edit</a>
+                - <a href="{% url 'position_delete' position.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

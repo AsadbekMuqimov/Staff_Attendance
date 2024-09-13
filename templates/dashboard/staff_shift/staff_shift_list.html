@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Shifts</title>
+</head>
+<body>
+    <h1>Staff Shifts</h1>
+
+    <a href="{% url 'staff_shift_create' %}">Add New Staff Shift</a>
+    
+    <ul>
+        {% for staff_shift in staff_shifts %}
+            <li>{{ staff_shift.staff }} - {{ staff_shift.shift }} - {{ staff_shift.start_time }} 
+                - <a href="{% url 'staff_shift_update' staff_shift.pk %}">Edit</a>
+                - <a href="{% url 'staff_shift_delete' staff_shift.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

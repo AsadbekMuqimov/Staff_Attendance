@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shift List</title>
+</head>
+<body>
+    <h1>Shift List</h1>
+
+    <a href="{% url 'shift_create' %}">Add New Shift</a>
+    
+    <ul>
+        {% for shift in shifts %}
+            <li>{{ shift.s_time }} - {{ shift.e_time }} 
+                - <a href="{% url 'shift_update' shift.pk %}">Edit</a>
+                - <a href="{% url 'shift_delete' shift.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
